@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "navbar navbar" "sidebar main" "sidebar footer";
+}
+
+nav {
+  grid-area: navbar;
+  top: 0;
+  position: sticky;
+}
+
+aside {
+  top: 20px;
+  grid-area: sidebar;
+  position: sticky;
+  align-self: start;
+  height: 100vh;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (max-width: 600px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    position: fixed;
+    width: 300px;
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

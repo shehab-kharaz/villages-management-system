@@ -7,7 +7,7 @@
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 250px 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: 
   "navbar navbar"
@@ -24,11 +24,18 @@ nav {
 
 
 aside {
+  // grid styles (aside is a grid element)
   top: 20px;
   grid-area: sidebar;
   position: sticky;
   align-self: start;
   height: 100vh;
+  // border: 1px solid red;
+
+  //flex styles (aside is a flex container)
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
@@ -42,7 +49,24 @@ footer {
 }
 
 
-@media(max-width: 600px) {
+
+
+
+.admin-profile-section{
+  margin-top: auto;  // push the admin-profile-section to the end of the flex aside
+  display: flex;
+}
+
+
+#toggle-sidebar-button {
+  visibility: hidden;
+}
+
+
+
+
+
+@media(max-width: 425px) {
   body {
     grid-template-columns: 1fr;
   }
@@ -55,6 +79,10 @@ footer {
 
   .show {
     display: block;
+  }
+
+  #toggle-sidebar-button {
+    visibility: visible;
   }
 }
 

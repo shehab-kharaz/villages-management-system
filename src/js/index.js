@@ -1,5 +1,5 @@
 const sidebar = document.getElementById("sidebar");
-const toggleSidebarButton = document.getElementById("toggle-sidebar");
+const toggleSidebarButton = document.getElementById("toggle-sidebar-button");
 
 
 function toggleSidebar(){

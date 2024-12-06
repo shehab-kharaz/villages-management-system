@@ -1,3 +1,13 @@
+$primary-background-color: #1a202c;
+$aside-background-color:  #1f2937;
+$cards-background-color: #1f2937;
+
+$primary-text-color: #e4e7eb;
+$primary-font-size: 1rem;
+
+$primary-padding: 1em;
+
+
 * {
   margin: 0;
   padding: 0;
@@ -8,52 +18,72 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 250px 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   grid-template-areas: 
-  "navbar navbar"
   "sidebar main"
-  "sidebar footer";
-}
+  "sidebar main";
 
-
-nav {
-  grid-area: navbar;
-  top: 0;
-  position: sticky;
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  font-size: $primary-font-size;
 }
 
 
 aside {
   // grid styles (aside is a grid element)
-  top: 20px;
   grid-area: sidebar;
   position: sticky;
   align-self: start;
   height: 100vh;
-  border: 1px solid red;
 
   //flex styles (aside is a flex container)
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+
+  background-color: $aside-background-color;
+  color: $primary-text-color;
 }
 
 
 main {
   grid-area: main;
+  padding: 1em;
 }
 
 
-footer {
-  grid-area: footer;
+aside h1 {
+  margin: 1rem 0;
+ 
 }
 
+aside ul {
+  margin-bottom: auto; // push the admin-profile-section to the end of the flex aside
+  list-style-type: none;
+}
+
+
+aside ul li {
+  padding: 1em 3em;
+}
+
+aside ul li:hover {
+  cursor: pointer;
+  background-color: $primary-background-color;
+}
+
+
+
+aside ul li a {
+  color: $primary-text-color;
+  text-decoration: none;
+}
 
 
 
 
 .admin-profile-section {
-  margin-top: auto;  // push the admin-profile-section to the end of the flex aside
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -72,11 +102,22 @@ footer {
 .admin-profile-section button {
   border: none;
   color: red;
+  background-color: $aside-background-color;
 }
 
 
 #toggle-sidebar-button {
   visibility: hidden;
+  border: none;
+  background-color: $aside-background-color;
+  color: $primary-text-color;
+  font-size: 1.45rem;
+  cursor: pointer;
+}
+
+#toggle-sidebar-button:hover{
+  background-color: $primary-text-color;
+  color: $aside-background-color;
 }
 
 
@@ -95,7 +136,7 @@ footer {
   }
 
   .show {
-    display: block;
+    display: none;
   }
 
   #toggle-sidebar-button {

@@ -23,6 +23,7 @@ aside {
   position: sticky;
   align-self: start;
   height: 100vh;
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -38,7 +39,22 @@ footer {
 
 .admin-profile-section {
   margin-top: auto;
+  margin-bottom: 10px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.admin-profile-section img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.admin-profile-section button {
+  border: none;
+  color: red;
 }
 
 #toggle-sidebar-button {

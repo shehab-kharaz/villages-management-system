@@ -30,7 +30,7 @@ aside {
   position: sticky;
   align-self: start;
   height: 100vh;
-  // border: 1px solid red;
+  border: 1px solid red;
 
   //flex styles (aside is a flex container)
   display: flex;
@@ -52,9 +52,26 @@ footer {
 
 
 
-.admin-profile-section{
+.admin-profile-section {
   margin-top: auto;  // push the admin-profile-section to the end of the flex aside
+  margin-bottom: 10px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.admin-profile-section img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.admin-profile-section button {
+  border: none;
+  color: red;
 }
 
 

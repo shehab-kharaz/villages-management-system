@@ -36,7 +36,7 @@
     <section>
 
       <h3>View Village List</h3>
-      <input type="text" placeholder="Search villages..."0>
+      <input type="text" placeholder="Search villages...">
       <div>
         <label for="sort-by">Sort by:</label>
         <select name="sort-by-drop-down" id="sort-by">
@@ -44,9 +44,9 @@
           <option value="alphabetical">Alphabetical</option>
         </select>
 
-        <label>Page:</label>
-        <button>Prev</button>
-        <button>Next</button>
+        <span>Page:</span>
+        <button id="navigation">Prev</button>
+        <button id="navigation">Next</button>
       </div>
 
       <div>
@@ -68,6 +68,18 @@
       </div>
 
     </section>
+
+
+
+
+
+    <div id="village-options-modal" role="dialog" aria-hidden="true">
+      <div id="modal-header">
+        <h2 id="modal-title"></h2>
+        <button id="modal-close-button"></button>
+      </div>
+      <div id="modal-body"></div>
+    </div>
 
   </main>
 

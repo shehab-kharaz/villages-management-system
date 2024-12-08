@@ -9,4 +9,68 @@
 
 <body>
 
+  <aside id="sidebar">
+    <h1>
+      <button id="toggle-sidebar-button">&#9776;</button>
+      Dashboard 
+    </h1>
+    <ul>
+      <li><a href="/index.html">Overview</a></li>
+      <li><a href="#">Village Management</a></li>
+      <li><a href="/src/html/chat.html">Chat</a></li>
+      <li><a href="/src/html/gallery.html">Gallery</a></li>
+    </ul>
+    <div class="admin-profile-section">
+      <img src="/src/images/admin-image.jpeg" alt="admin-profile-image">
+      <h3>Admin name</h3>
+      <button id="logout-button">Logout</button>
+    </div>
+  </aside>
+
+
+
+  <main>
+
+    <button>Add new village</button>
+
+    <section>
+
+      <h3>View Village List</h3>
+      <input type="text" placeholder="Search villages..."0>
+      <div>
+        <label for="sort-by">Sort by:</label>
+        <select name="sort-by-drop-down" id="sort-by">
+          <option value="default">Default</option>
+          <option value="alphabetical">Alphabetical</option>
+        </select>
+
+        <label>Page:</label>
+        <button>Prev</button>
+        <button>Next</button>
+      </div>
+
+      <div>
+        <div>
+          <span>Village name</span> - <span>area</span>
+          <button>View</button>
+          <button>Update Village</button>
+          <button>Delete Village</button>
+          <button>Update Demographic Data</button>
+        </div>
+        <div>
+          <span>Village name</span> - <span>area</span>
+          <button>View</button>
+          <button>Update Village</button>
+          <button>Delete Village</button>
+          <button>Update Demographic Data</button>
+        </div>
+        <div></div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+
 </body>

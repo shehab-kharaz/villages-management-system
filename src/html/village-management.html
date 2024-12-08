@@ -4,7 +4,9 @@
   <meta name="viewport" content="width=device-width">
   <title>Village Management</title>
   <link rel="stylesheet" href="/dist/css/management/village-management.css">
+  <link rel="stylesheet" href="/dist/css/villages-modal/villages-modal.css">
   <script type="text/javascript" src="/src/js/village-management.js" defer></script>
+  <script type="text/javascript" src="/src/js/villages-modal.js" defer></script>
 </head>
 
 <body>
@@ -30,11 +32,8 @@
 
 
   <main>
-
     <button>Add new village</button>
-
     <section>
-
       <h3>View Village List</h3>
       <input type="text" placeholder="Search villages...">
       <div>
@@ -66,21 +65,20 @@
         </div>
         <div></div>
       </div>
-
     </section>
-
-
-
+  </main>
 
 
     <div id="village-options-modal" role="dialog" aria-hidden="true">
       <div id="modal-header">
         <h2 id="modal-title"></h2>
-        <button id="modal-close-button"></button>
+        <button id="modal-close-button">&#10006;</button>
       </div>
       <div id="modal-body"></div>
     </div>
-
+  <div id="modal-backdrop" inert></div>
+  <button class="open-modal-button">Open Modal</button>
+  
   </main>
 
 

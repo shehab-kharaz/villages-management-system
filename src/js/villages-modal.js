@@ -91,6 +91,9 @@ function createAddUpdateVillageModal(title, buttonText, data) {
 
   const actionButton = document.createElement("button");
   actionButton.innerText = buttonText;
+  actionButton.addEventListener("click", ()=>{
+    console.log("Clicked");
+  })
 
   setUpModal(title, villageNewUpdateTemplate, actionButton)
   openModal();
@@ -194,7 +197,7 @@ function createUpdateDemographicsModal() {
 closeButton.addEventListener("click", closeModal);
 modalBackdrop.addEventListener("click", closeModal);
 addNewVillageButton.addEventListener("click", createAddNewVillageModal);
-document.querySelector("#update-village-btn").addEventListener("click",createUpdateVillageModal)
-document.querySelector("#view-village-btn").addEventListener("click", createViewModal);
-document.querySelector("#delete-village-btn").addEventListener("click", createDeleteModal);
-document.querySelector("#demographic-btn").addEventListener("click", createUpdateDemographicsModal)
+// document.querySelector("#update-village-btn").addEventListener("click",createUpdateVillageModal)
+// document.querySelector("#view-village-btn").addEventListener("click", createViewModal);
+// document.querySelector("#delete-village-btn").addEventListener("click", createDeleteModal);
+// document.querySelector("#demographic-btn").addEventListener("click", createUpdateDemographicsModal)

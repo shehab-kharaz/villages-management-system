@@ -4,7 +4,6 @@ const modalTitle = document.querySelector("#modal-title");
 const modalBody = document.querySelector("#modal-body");
 const closeButton = document.querySelector("#modal-close-button");
 const addNewVillageButton = document.querySelector(".add-new-village-btn");
-const villageMap = new Map(villages.map(village => [village.name, village]));
 
 let previouslyFocusedElement;
 
@@ -110,7 +109,7 @@ function createAddUpdateVillageModal(title, buttonText, data) {
 }
 
 function createViewModal(villageId) {
-  const village = villageMap.get(villageId);
+  const village = villagesMap.get(villageId);
   const details = 
   `
     <p><strong>Village Name:</strong> ${village.name}</p>
@@ -127,7 +126,7 @@ function createViewModal(villageId) {
 }
 
 function createDeleteModal(villageId) {
-  const village = villageMap.get(villageId);
+  const village = villagesMap.get(villageId);
 
   const message = document.createElement("p");
   message.textContent = `Are you sure you want to delete the village "${village.name}"? This action cannot be undone.`;
@@ -135,10 +134,11 @@ function createDeleteModal(villageId) {
   const confirmButton = document.createElement("button");
   confirmButton.textContent = "Yes, Delete";
   confirmButton.addEventListener("click", () => {
-    console.log("deleted");
-    closeModal(); 
-    alert(`Village "${village.name}" has been deleted successfully.`);
+    console.log(villagesMap);
+    villagesMap.delete(villageId);
+    console.log(villagesMap);
 
+    closeModal(); 
   });
 
   const cancelButton = document.createElement("button");

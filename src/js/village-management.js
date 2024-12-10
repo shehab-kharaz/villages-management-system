@@ -1,24 +1,25 @@
 const villageContainer = document.querySelector("#village-list-container");
-const villages = [
-  {
-    name: "Jabalia",
-    region: "Gaza Strip",
-    area: 10,
-    latitude: 31.9522,
-    longitude: 35.2034,
-    tags: ["rural", "urban"],
-    img: "../images/admin-image.jpeg"
-  },
-  {
-    name: "Beit Hanouhhhhn",
-    region: "Gaza Strip",
-    area: 15,
-    latitude: 31.5362,
-    longitude: 34.5041,
-    tags: "urban",
-    img: "../images/admin-image.jpeg"
-  }
-];
+const villagesMap = new Map();
+
+villagesMap.set("Jabalia", {
+  name: "Jabalia",
+  region: "Gaza Strip",
+  area: 10,
+  latitude: 31.9522,
+  longitude: 35.2034,
+  tags: ["rural", "urban"],
+  img: "../images/admin-image.jpeg"
+});
+
+villagesMap.set("Beit Hanouhhhhn", {
+  name: "Beit Hanouhhhhn",
+  region: "Gaza Strip",
+  area: 15,
+  latitude: 31.5362,
+  longitude: 34.5041,
+  tags: "urban",
+  img: "../images/admin-image.jpeg"
+});
 
 
 
@@ -39,11 +40,11 @@ function createVillageEntry(village) {
 }
 
 
-function generateVillageList(villages) {
+function generateVillageList(villagesMap) {
   villageContainer.innerHTML = ""; 
-  for(individualVillage of villages){
+  for(individualVillage of villagesMap.values()){
     createVillageEntry(individualVillage);
   }
 }
 
-generateVillageList(villages);
+generateVillageList(villagesMap);

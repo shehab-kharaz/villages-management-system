@@ -4,21 +4,31 @@ const modalTitle = document.querySelector("#modal-title");
 const modalBody = document.querySelector("#modal-body");
 const closeButton = document.querySelector("#modal-close-button");
 const addNewVillageButton = document.querySelector(".add-new-village-btn");
-const updateVillageForm = ["Village Name", "Region/ District", "Land Area (sq km)", "Latitude", "Longitude", "Upload Image"];
-const addNewVillageForm = [...updateVillageForm, "Categories/ Tags"]
-const createAddNewVillageModal = () => createAddUpdateVillageModal("Add New Village", "Add Village", addNewVillageForm);
-const createUpdateVillageModal = () => createAddUpdateVillageModal("Update Village", "Update Village", updateVillageForm);
-const villageObj = 
-{
-  name: "Jabalia",
-  region: "Gaza Strip",
-  area: 10,
-  latitude: 31.9522,
-  longitude: 35.2034,
-  tags: ["rural", "urban"],
-  img: "../images/admin-image.jpeg"
-};
+const villageMap = new Map(villages.map(village => [village.name, village]));
+
 let previouslyFocusedElement;
+
+const updateVillageForm = 
+[
+  "Village Name", 
+  "Region/ District", 
+  "Land Area (sq km)", 
+  "Latitude", 
+  "Longitude", 
+  "Upload Image"
+];
+const addNewVillageForm = 
+[
+  ...updateVillageForm, 
+  "Categories/ Tags"
+]
+
+const createAddNewVillageModal = () => 
+  createAddUpdateVillageModal("Add New Village", "Add Village", addNewVillageForm);
+const createUpdateVillageModal = () => 
+  createAddUpdateVillageModal("Update Village", "Update Village", updateVillageForm);
+
+
 
 function openModal() {
   previouslyFocusedElement = document.activeElement;
@@ -92,15 +102,15 @@ function createAddUpdateVillageModal(title, buttonText, data) {
   const actionButton = document.createElement("button");
   actionButton.innerText = buttonText;
   actionButton.addEventListener("click", ()=>{
-    console.log("Clicked");
+    console.log("Add button Clicked");
   })
 
   setUpModal(title, villageNewUpdateTemplate, actionButton)
   openModal();
 }
 
-function createViewModal() {
-  const village = villageObj;
+function createViewModal(villageId) {
+  const village = villageMap.get(villageId);
   const details = 
   `
     <p><strong>Village Name:</strong> ${village.name}</p>
@@ -108,7 +118,7 @@ function createViewModal() {
     <p><strong>Land Area (sq km):</strong> ${village.area}</p>
     <p><strong>Latitude:</strong> ${village.latitude}</p>
     <p><strong>Longitude:</strong> ${village.longitude}</p>
-    <p><strong>Tags:</strong> ${village.tags.join(", ")}</p>
+    <p><strong>Tags:</strong> ${Array.isArray(village.tags) ? village.tags.join(", ") : village.tags}</p>
     <img src="${village.img}" alt="village-image" style="max-width: 100%;">
   `;
   const container = document.createElement("div");
@@ -116,8 +126,8 @@ function createViewModal() {
   setUpModal("Village Details", container); 
 }
 
-function createDeleteModal() {
-  const village = villageObj;
+function createDeleteModal(villageId) {
+  const village = villageMap.get(villageId);
 
   const message = document.createElement("p");
   message.textContent = `Are you sure you want to delete the village "${village.name}"? This action cannot be undone.`;
@@ -188,6 +198,21 @@ function createUpdateDemographicsModal() {
 }
 
 
+function performActionBasedOnButton(event){
+
+  const villageDiv = event.target.closest(".village-item");
+  const villageId = villageDiv.getAttribute("data-village-id");
+
+  if (event.target.classList.contains("view-village-btn")) {
+    createViewModal(villageId);
+  } else if (event.target.classList.contains("update-village-btn")) {
+    createUpdateVillageModal();
+  } else if (event.target.classList.contains("delete-village-btn")) {
+    createDeleteModal(villageId);
+  } else if (event.target.classList.contains("demographic-btn")) {
+    createUpdateDemographicsModal();
+  }
+}
 
 
 
@@ -197,7 +222,4 @@ function createUpdateDemographicsModal() {
 closeButton.addEventListener("click", closeModal);
 modalBackdrop.addEventListener("click", closeModal);
 addNewVillageButton.addEventListener("click", createAddNewVillageModal);
-// document.querySelector("#update-village-btn").addEventListener("click",createUpdateVillageModal)
-// document.querySelector("#view-village-btn").addEventListener("click", createViewModal);
-// document.querySelector("#delete-village-btn").addEventListener("click", createDeleteModal);
-// document.querySelector("#demographic-btn").addEventListener("click", createUpdateDemographicsModal)
+villageContainer.addEventListener("click", (event) => performActionBasedOnButton(event));

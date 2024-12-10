@@ -1,4 +1,4 @@
-
+const villageContainer = document.querySelector("#village-list-container");
 const villages = [
   {
     name: "Jabalia",
@@ -20,11 +20,13 @@ const villages = [
   }
 ];
 
-const villageContainer = document.querySelector("#village-list-container");
+
 
 function createVillageEntry(village) {
 
   const villageDiv = document.createElement("div");
+  villageDiv.classList.add("village-item");
+  villageDiv.setAttribute("data-village-id", village.name);
   villageDiv.innerHTML = `
     <span>${village.name}</span> - <span>${village.region}</span>
     <button class="view-village-btn">View</button>
@@ -44,6 +46,4 @@ function generateVillageList(villages) {
   }
 }
 
-
 generateVillageList(villages);
-villageContainer.addEventListener("click", () => console.log("shehab"))

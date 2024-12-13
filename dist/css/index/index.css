@@ -16,7 +16,7 @@ body {
 
 aside {
   grid-area: sidebar;
-  position: sticky;
+  position: fixed;
   align-self: start;
   height: 100vh;
   display: flex;

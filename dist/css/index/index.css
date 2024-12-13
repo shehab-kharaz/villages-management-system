@@ -19,6 +19,7 @@ aside {
   position: fixed;
   align-self: start;
   height: 100vh;
+  width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,6 +30,10 @@ aside {
 main {
   grid-area: main;
   padding: 1em;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
 }
 
 aside h1 {

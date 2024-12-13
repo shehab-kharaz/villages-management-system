@@ -1,6 +1,7 @@
 $primary-background-color: #1a202c;
 $aside-background-color:  #1f2937;
-$cards-background-color: #1f2937;
+$cards-background-color: #374151;
+$main-container-background-color: #2d3748;
 
 $primary-text-color: #e4e7eb;
 $primary-font-size: 1rem;
@@ -121,7 +122,37 @@ aside ul li a {
 }
 
 
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0.8em;
+  background-color: $main-container-background-color;
+  border-radius: 8px;
 
+  h3 {
+    margin: 0.4em 0;
+  }
+
+  input {
+    max-width: 100%;
+    margin: 0.4em 0;
+    padding: 0.9em 0.5em;
+    border-radius: 0.5em;
+    font-size: 0.9rem;
+    background-color: $cards-background-color;
+    color: $primary-text-color;
+
+    border: 1px solid $primary-text-color;
+  }
+
+  div.village-item{
+    display: flex;
+    background-color: $cards-background-color;
+    margin: 1em 0;
+    padding: 1em 0.8em;
+    border-radius: 0.3em;
+  }
+}
 
 
 @media(max-width: 425px) {

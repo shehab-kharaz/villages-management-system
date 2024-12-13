@@ -134,10 +134,8 @@ function createDeleteModal(villageId) {
   const confirmButton = document.createElement("button");
   confirmButton.textContent = "Yes, Delete";
   confirmButton.addEventListener("click", () => {
-    console.log(villagesMap);
     villagesMap.delete(villageId);
-    console.log(villagesMap);
-
+    generateVillageList(villagesMap);
     closeModal(); 
   });
 

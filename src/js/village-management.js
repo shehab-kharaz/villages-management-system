@@ -29,13 +29,16 @@ function createVillageEntry(village) {
   villageDiv.classList.add("village-item");
   villageDiv.setAttribute("data-village-id", village.name);
   villageDiv.innerHTML = `
-    <span>${village.name}</span> - <span>${village.region}</span>
+    <div class="name-container"> 
+     <span>${village.name}</span> - <span>${village.region}</span>
+    </div> 
+    <div class="buttons-container">
     <button class="view-village-btn">View</button>
     <button class="update-village-btn">Update Village</button>
     <button class="delete-village-btn">Delete Village</button>
     <button class="demographic-btn">Update Demographic Data</button>
+    <div>
   `;
-
   villageContainer.appendChild(villageDiv);
 }
 

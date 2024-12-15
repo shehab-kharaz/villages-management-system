@@ -10,7 +10,7 @@
   border-radius: 0.5rem;
   background-color: #2d3748;
   color: #cdd8e2;
-  border: 1px #4f5b6f solid;
+  border: 1px solid #4f5b6f;
   padding: 1.3rem;
 }
 #village-options-modal #modal-header {
@@ -29,7 +29,57 @@
   color: #cdd8e2;
 }
 #village-options-modal.modal-active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#village-options-modal.modal-active #modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+#village-options-modal.modal-active #modal-body p {
+  margin: 0.2rem 0;
+}
+#village-options-modal.modal-active #modal-body p:last-of-type {
+  margin-bottom: 1.2rem;
+}
+#village-options-modal.modal-active #modal-body input {
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 0.3rem;
+  width: 100%;
+  padding: 0.8em 1rem;
+  border-radius: 0.5em;
+  font-size: 0.9rem;
+  background-color: #374151;
+  color: #e4e7eb;
+  border: 1px solid #4f5b6f;
+}
+#village-options-modal.modal-active #modal-body input::placeholder {
+  color: #9da5b1;
+}
+#village-options-modal.modal-active #modal-body input:focus {
+  outline: none;
+}
+#village-options-modal.modal-active #modal-body button {
+  background-color: #718096;
+  width: 100%;
+  color: #e4e7eb;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  transition: background-color 150ms;
+}
+#village-options-modal.modal-active #modal-body button:hover {
+  cursor: pointer;
+  background-color: #1f2937;
+}
+#village-options-modal.modal-active .delete-dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 #modal-backdrop {

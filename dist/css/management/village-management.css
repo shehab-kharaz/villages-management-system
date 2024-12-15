@@ -25,56 +25,42 @@ aside {
   background-color: #1f2937;
   color: #e4e7eb;
 }
-
-main {
-  grid-area: main;
-  padding: 1em;
-}
-
 aside h1 {
   margin: 1rem 0;
 }
-
 aside ul {
   margin-bottom: auto;
   list-style-type: none;
 }
-
 aside ul li {
-  padding: 1em 3em;
+  padding: 1rem 3rem;
 }
-
 aside ul li:hover {
   cursor: pointer;
   background-color: #1a202c;
 }
-
 aside ul li a {
   color: #e4e7eb;
   text-decoration: none;
 }
-
-.admin-profile-section {
-  margin-bottom: 10px;
+aside .admin-profile-section {
+  margin-bottom: 0.625rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-
-.admin-profile-section img {
-  width: 40px;
-  height: 40px;
+aside .admin-profile-section img {
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   object-fit: cover;
 }
-
-.admin-profile-section button {
+aside .admin-profile-section button {
   border: none;
   color: red;
   background-color: #1f2937;
 }
-
-#toggle-sidebar-button {
+aside #toggle-sidebar-button {
   visibility: hidden;
   border: none;
   background-color: #1f2937;
@@ -82,38 +68,89 @@ aside ul li a {
   font-size: 1.45rem;
   cursor: pointer;
 }
-
-#toggle-sidebar-button:hover {
+aside #toggle-sidebar-button:hover {
   background-color: #e4e7eb;
   color: #1f2937;
 }
 
-section {
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+main button {
+  background-color: #718096;
+  color: #e4e7eb;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  transition: background-color 150ms;
+}
+main button:hover {
+  cursor: pointer;
+  background-color: #1f2937;
+}
+main .add-new-village-btn {
+  margin-bottom: 1rem;
+}
+main section {
   display: flex;
   flex-direction: column;
-  padding: 1em 0.8em;
+  gap: 1rem;
+  padding: 1rem 0.8rem;
   background-color: #2d3748;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
-section h3 {
-  margin: 0.4em 0;
-}
-section input {
+main section input {
   max-width: 100%;
-  margin: 0.4em 0;
-  padding: 0.9em 0.5em;
-  border-radius: 0.5em;
+  padding: 0.9rem 0.5rem;
+  border-radius: 0.5rem;
   font-size: 0.9rem;
   background-color: #374151;
   color: #e4e7eb;
-  border: 1px solid #e4e7eb;
+  border: 1px solid #4e5866;
 }
-section div.village-item {
+main section input::placeholder {
+  color: #9da5b1;
+}
+main section input:focus {
+  outline: none;
+}
+main section select {
+  background-color: #374151;
+  color: #e4e7eb;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #4e5866;
+}
+main section select option {
+  background-color: #b7bdc4;
+  color: black;
+}
+main section select:focus {
+  outline: none;
+}
+main section .villages-sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main section #village-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+main section .village-item {
   display: flex;
   background-color: #374151;
-  margin: 1em 0;
-  padding: 1em 0.8em;
-  border-radius: 0.3em;
+  padding: 1rem 0.8rem;
+  border-radius: 0.3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+main section .buttons-container {
+  display: flex;
+  gap: 0.3rem;
 }
 
 @media (max-width: 425px) {

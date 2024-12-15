@@ -144,6 +144,7 @@ function createDeleteModal(villageId) {
   cancelButton.addEventListener("click", closeModal);
 
   const container = document.createElement("div");
+  container.classList.add("delete-dialog-body");
   container.appendChild(message);
   container.appendChild(confirmButton);
   container.appendChild(cancelButton);

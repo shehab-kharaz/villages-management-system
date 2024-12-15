@@ -1,21 +1,26 @@
 $modal-background-color: #2d3748;
 $modal-text-color: #cdd8e2;
+$modal-input-bg-color: #374151;
+$modal-input-placeholder-color: #9da5b1;
+$modal-border-color: #4f5b6f;
+$button-hover-bg-color: #1f2937;
+$button-bg-color: #718096;
+$button-text-color: #e4e7eb;
 
 #village-options-modal {
-  display: none; 
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  width: 80%; 
-  max-width: 30rem; 
+  width: 80%;
+  max-width: 30rem;
   border-radius: 0.5rem;
   background-color: $modal-background-color;
   color: $modal-text-color;
-  border: 1px #4f5b6f solid;
+  border: 1px solid $modal-border-color;
   padding: 1.3rem;
-  
 
   #modal-header {
     display: flex;
@@ -36,9 +41,69 @@ $modal-text-color: #cdd8e2;
   }
 
   &.modal-active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    #modal-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+
+      p {
+        margin: 0.2rem 0;
+
+        &:last-of-type {
+          margin-bottom: 1.2rem;
+        }
+      }
+
+      input {
+        box-sizing: border-box;
+        position: relative;
+        margin-top: 0.3rem;
+        width: 100%;
+        padding: 0.8em 1rem;
+        border-radius: 0.5em;
+        font-size: 0.9rem;
+        background-color: $modal-input-bg-color;
+        color: $button-text-color;
+        border: 1px solid $modal-border-color;
+
+        &::placeholder {
+          color: $modal-input-placeholder-color;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        background-color: $button-bg-color;
+        width: 100%;
+        color: $button-text-color;
+        padding: 0.8rem 1rem;
+        border: none;
+        border-radius: 0.4rem;
+        font-weight: bold;
+        transition: background-color 150ms;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $button-hover-bg-color;
+        }
+      }
+    }
+
+    .delete-dialog-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
   }
 }
+
 
 #modal-backdrop {
   display: none;

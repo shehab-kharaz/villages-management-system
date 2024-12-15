@@ -1,0 +1,33 @@
+$primary-background-color: #1a202c;
+$login-container-background-color:  #1f2937;
+$buttons-background-color: #3c82f6;
+
+$primary-text-color: #e4e7eb;
+$primary-font-size: 1rem;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  font-size: $primary-font-size;
+}
+
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+
+
+  background-color: $login-container-background-color;
+}

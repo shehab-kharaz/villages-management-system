@@ -4,16 +4,72 @@
   <meta name="viewport" content="width=device-width">
   <title>Village website</title>
   <link rel="stylesheet" href="dist/css/index/index.css">
+  <link rel="stylesheet" href="dist/css/index/charts.css">
+  <link rel="stylesheet" href="dist/css/index/map-info.css"> 
   <script type="text/javascript" src="/src/js/index.js" defer></script>
+  <script type="text/javascript" src="/src/js/charts.js" defer></script>
+  <script type="text/javascript" src="/src/js/map-info.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
+  <aside id="sidebar">
+    <h1>
+      <button id="toggle-sidebar-button">&#9776;</button>
+      Dashboard 
+    </h1>
+    <ul>
+      <li><a href="#">Overview</a></li>
+      <li><a href="/src/html/village-management.html">Village Management</a></li>
+      <li><a href="/src/html/chat.html">Chat</a></li>
+      <li><a href="/src/html/gallery.html">Gallery</a></li>
+    </ul>
+    <div class="admin-profile-section">
+      <img src="/src/images/admin-image.jpeg" alt="admin-profile-image">
+      <h3>Admin name</h3>
+      <button id="logout-button">Logout</button>
+    </div>
+  </aside>
 
-  <nav> <button id="toggle-sidebar">toggle sidebar</button> Navbar</nav>
-  <aside id="sidebar">Sidebar</aside>
-  <main>Main
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet repellendus recusandae pariatur molestias est ex reprehenderit assumenda tempora cumque fugiat neque omnis ad porro temporibus officia illo delectus maiores, quisquam facilis quod nobis laborum. Asperiores debitis nobis eum cumque sit? Similique perferendis officia tempora voluptas? Rerum libero deserunt laborum illo temporibus dicta adipisci, vel ad perspiciatis consectetur animi? Voluptas deserunt doloremque iste. Atque laboriosam fugit, et recusandae similique repudiandae provident possimus voluptate mollitia consequuntur, accusantium quaerat expedita officiis, amet dignissimos quam sed nemo quisquam enim. Fugit nam fugiat iste ut nihil, nostrum quae dolore voluptatibus repellendus asperiores voluptas maiores modi itaque blanditiis deserunt sit amet illo neque accusantium magnam commodi culpa nemo placeat! Nam assumenda tempora obcaecati! Aut dicta blanditiis laudantium aliquam quis illo adipisci aliquid fuga minus dolore? Veritatis ex inventore harum asperiores. Magnam soluta doloribus similique quos illum doloremque eos, delectus deleniti nam maiores nesciunt qui iure hic minus repellat nulla commodi deserunt eius ut odit repellendus. Eaque perferendis quae sunt reiciendis, beatae blanditiis modi dolor eveniet eligendi, esse ipsa consectetur voluptas commodi doloremque harum. Sit, officiis eaque expedita rerum debitis nulla facilis. Porro suscipit, commodi quam aliquam libero repellat amet rerum, vitae sint error beatae voluptates vel!</p>
-  </main>
-  <footer>Footer</footer>
   
+  <main>
+    <h1>Overview</h1>
+    <div class="map-container">
+      <div id="map"></div> 
+    </div>
+
+    <div class="info-container">
+      <div class="info-box" id="village-count">
+        <h3>Total Number of Villages</h3>
+        <p id="village-number">0</p>
+      </div>
+      <div class="info-box" id="urban-count">
+        <h3>Total Number of Urban Areas</h3>
+        <p id="urban-number">0</p>
+      </div>
+      <div class="info-box" id="population-size">
+        <h3>Total Population Size</h3>
+        <p id="population-number">0</p>
+      </div>
+      <div class="info-box" id="average-land-area">
+        <h3>Average Land Area</h3>
+        <p id="land-area-number">0</p>
+        <span>sq km</span>
+      </div>
+    </div>
+
+    <div class="charts-container">
+      <div class="chart-box">
+          <canvas id="ageChart"></canvas>
+      </div>
+      <div class="chart-box">
+          <canvas id="genderChart"></canvas>
+      </div>
+      <div class="chart-box">
+          <canvas id="populationChart"></canvas>
+      </div>
+    </div>
+
+  </main>
+
 </body>

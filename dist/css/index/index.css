@@ -6,34 +6,94 @@
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 300px 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: "navbar navbar" "sidebar main" "sidebar footer";
-}
-
-nav {
-  grid-area: navbar;
-  top: 0;
-  position: sticky;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "sidebar main" "sidebar main";
+  background-color: #1a202c;
+  color: #e4e7eb;
+  font-size: 1rem;
 }
 
 aside {
-  top: 20px;
   grid-area: sidebar;
-  position: sticky;
+  position: fixed;
   align-self: start;
   height: 100vh;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1f2937;
+  color: #e4e7eb;
 }
 
 main {
   grid-area: main;
+  padding: 1em;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
 }
 
-footer {
-  grid-area: footer;
+aside h1 {
+  margin: 1rem 0;
 }
 
-@media (max-width: 600px) {
+aside ul {
+  margin-bottom: auto;
+  list-style-type: none;
+}
+
+aside ul li {
+  padding: 1em 3em;
+}
+
+aside ul li:hover {
+  cursor: pointer;
+  background-color: #1a202c;
+}
+
+aside ul li a {
+  color: #e4e7eb;
+  text-decoration: none;
+}
+
+.admin-profile-section {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.admin-profile-section img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.admin-profile-section button {
+  border: none;
+  color: red;
+  background-color: #1f2937;
+}
+
+#toggle-sidebar-button {
+  visibility: hidden;
+  border: none;
+  background-color: #1f2937;
+  color: #e4e7eb;
+  font-size: 1.45rem;
+  cursor: pointer;
+}
+
+#toggle-sidebar-button:hover {
+  background-color: #e4e7eb;
+  color: #1f2937;
+}
+
+@media (max-width: 425px) {
   body {
     grid-template-columns: 1fr;
   }
@@ -43,7 +103,10 @@ footer {
     display: none;
   }
   .show {
-    display: block;
+    display: none;
+  }
+  #toggle-sidebar-button {
+    visibility: visible;
   }
 }
 

@@ -108,7 +108,13 @@ main .available-admins {
 main .available-admins figure {
   text-align: center;
   max-width: 80px;
-  margin: 0;
+  margin: 0 0.4rem;
+}
+main .available-admins figure:hover {
+  cursor: pointer;
+}
+main .available-admins figure:hover figcaption {
+  color: white;
 }
 main .available-admins figure img {
   width: 50px;

@@ -131,7 +131,14 @@ main {
     figure {
       text-align: center;
       max-width: 80px;
-      margin: 0;  
+      margin: 0 0.4rem;  
+
+      &:hover {
+        cursor: pointer;
+        figcaption {
+          color:white;
+        }
+      }
 
       img {
         width: 50px;

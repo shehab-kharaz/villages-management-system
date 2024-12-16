@@ -19,6 +19,7 @@ aside {
   position: fixed;
   align-self: start;
   height: 100vh;
+  width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -75,6 +76,7 @@ aside #toggle-sidebar-button:hover {
 
 main {
   grid-area: main;
+  margin: 1rem;
 }
 main button {
   background-color: #718096;
@@ -83,7 +85,7 @@ main button {
   border: none;
   border-radius: 0.4rem;
   font-weight: bold;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   transition: background-color 150ms;
 }
 main button:hover {

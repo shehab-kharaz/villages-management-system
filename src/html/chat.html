@@ -9,4 +9,31 @@
 
 <body>
 
+  <aside id="sidebar">
+    <h1>
+      <button id="toggle-sidebar-button">&#9776;</button>
+      Dashboard 
+    </h1>
+    <ul>
+      <li><a href="/index.html">Overview</a></li>
+      <li><a href="/src/html/village-management.html">Village Management</a></li>
+      <li><a href="/src/html/chat.html">Chat</a></li>
+      <li><a href="/src/html/gallery.html">Gallery</a></li>
+    </ul>
+    <div class="admin-profile-section">
+      <img src="/src/images/admin-image.jpeg" alt="admin-profile-image">
+      <h3>Admin name</h3>
+      <button id="logout-button">Logout</button>
+    </div>
+  </aside>
+
+  <main>
+    <h1>Chat With Admins</h1>
+    <input type="text" placeholder="Search for an admin...">
+    <div>
+      <h3>Available Admins</h3>
+      <div class="available-admins"></div>
+    </div>
+  </main>
+
 </body>

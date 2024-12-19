@@ -3,38 +3,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Galleries</title>
+  <link rel="stylesheet" href="/dist/css/main-layout/main-layout.css">
   <link rel="stylesheet" href="/dist/css/gallery/gallery.css">
+  <script src="/src/js/load-aside.js" defer></script>
   <script type="text/javascript" src="/src/js/gallery.js" defer></script>
 </head>
 
 <body>
-
-  <aside id="sidebar">
-    <h1>
-      <button id="toggle-sidebar-button">&#9776;</button>
-      Dashboard 
-    </h1>
-    <ul>
-      <li><a href="/index.html">Overview</a></li>
-      <li><a href="/src/html/gallery.html">Village Management</a></li>
-      <li><a href="/src/html/chat.html">Chat</a></li>
-      <li><a href="/src/html/gallery.html">Gallery</a></li>
-    </ul>
-    <div class="admin-profile-section">
-      <img src="/src/images/admin-image.jpeg" alt="admin-profile-image">
-      <h3>Admin name</h3>
-      <button id="logout-button">Logout</button>
-    </div>
-  </aside>
-
+  
+  <aside></aside>
 
   <main>
     <button id="add-image-btn">Add New Image</button>
     <div class="gallery-container"></div>
     <input type="file" id="image-upload" style="display: none;">
   </main>
-
-
-
 
 </body>

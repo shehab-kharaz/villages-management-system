@@ -12,106 +12,7 @@ $header-margin: 1rem;
 $input-padding: 0.9rem 0.5rem;
 $button-padding: 0.6rem 1rem;
 
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-
-body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  grid-template-rows: 1fr auto;
-  grid-template-areas: 
-  "sidebar main"
-  "sidebar main";
-
-  background-color: $primary-background-color;
-  color: $primary-text-color;
-  font-size: $primary-font-size;
-}
-
-
-aside {
-  // grid styles (aside is a grid element)
-  grid-area: sidebar;
-  position: sticky;
-  align-self: start;
-  height: 100vh;
-
-  //flex styles (aside is a flex container)
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-
-  background-color: $aside-background-color;
-  color: $primary-text-color;
-
-  h1 {
-    margin: $header-margin 0;
-  }
-
-  ul {
-    margin-bottom: auto;
-    list-style-type: none;
-
-    li {
-      padding: 1rem 3rem;
-
-      &:hover {
-        cursor: pointer;
-        background-color: $primary-background-color;
-      }
-
-      a {
-        color: $primary-text-color;
-        text-decoration: none;
-      }
-    }
-  }
-
-  .admin-profile-section {
-    margin-bottom: 0.625rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    img {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    button {
-      border: none;
-      color: red;
-      background-color: $aside-background-color;
-    }
-  }
-
-  #toggle-sidebar-button {
-    visibility: hidden;
-    border: none;
-    background-color: $aside-background-color;
-    color: $primary-text-color;
-    font-size: 1.45rem;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $primary-text-color;
-      color: $aside-background-color;
-    }
-  }
-}
-
-
 main {
-  grid-area: main;
-  padding: $primary-padding;
 
   button {
     background-color: $buttons-background-color;
@@ -200,27 +101,6 @@ main {
       display: flex;
       gap: 0.3rem;
     }
-  }
-}
-
-
-@media(max-width: 425px) {
-  body {
-    grid-template-columns: 1fr;
-  }
-
-  aside {
-    position: fixed;
-    width: 300px;
-    display: none;
-  }
-
-  .show {
-    display: none;
-  }
-
-  #toggle-sidebar-button {
-    visibility: visible;
   }
 }
 

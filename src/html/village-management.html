@@ -3,33 +3,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Village Management</title>
-  <link rel="stylesheet" href="/dist/css/management/village-management.css">
+  <link rel="stylesheet" href="/dist/css/main-layout/main-layout.css">
+  <link rel="stylesheet" href="/dist/css/village-management/village-management.css">
   <link rel="stylesheet" href="/dist/css/villages-modal/villages-modal.css">
+  <script src="/src/js/load-aside.js" defer></script>
   <script type="text/javascript" src="/src/js/village-management.js" defer></script>
   <script type="text/javascript" src="/src/js/villages-modal.js" defer></script>
 </head>
 
 <body>
 
-  <aside id="sidebar">
-    <h1>
-      <button id="toggle-sidebar-button">&#9776;</button>
-      Dashboard 
-    </h1>
-    <ul>
-      <li><a href="/index.html">Overview</a></li>
-      <li><a href="#">Village Management</a></li>
-      <li><a href="/src/html/chat.html">Chat</a></li>
-      <li><a href="/src/html/gallery.html">Gallery</a></li>
-    </ul>
-    <div class="admin-profile-section">
-      <img src="/src/images/admin-image.jpeg" alt="admin-profile-image">
-      <h3>Admin name</h3>
-      <button id="logout-button">Logout</button>
-    </div>
-  </aside>
-
-
+  <aside></aside>
 
   <main>
     <button class="add-new-village-btn">Add new village</button>
@@ -60,13 +44,13 @@
   </main>
 
 
-    <div id="village-options-modal" role="dialog">
-      <div id="modal-header">
-        <h2 id="modal-title"></h2>
-        <button id="modal-close-button">&#10006;</button>
-      </div>
-      <div id="modal-body"></div>
+  <div id="village-options-modal" role="dialog">
+    <div id="modal-header">
+      <h2 id="modal-title"></h2>
+      <button id="modal-close-button">&#10006;</button>
     </div>
+    <div id="modal-body"></div>
+  </div>
   <div id="modal-backdrop" inert></div>
   
   </main>

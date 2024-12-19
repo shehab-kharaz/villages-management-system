@@ -3,10 +3,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Galleries</title>
+  <link rel="stylesheet" href="/dist/css/main-layout/main-layout.css">
   <link rel="stylesheet" href="/dist/css/gallery/gallery.css">
+  <script src="/src/js/load-aside.js" defer></script>
   <script type="text/javascript" src="/src/js/gallery.js" defer></script>
 </head>
 
 <body>
+  
+  <aside></aside>
+
+  <main>
+    <button id="add-image-btn">Add New Image</button>
+    <div class="gallery-container"></div>
+    <input type="file" id="image-upload" style="display: none;">
+  </main>
 
 </body>

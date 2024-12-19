@@ -3,23 +3,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Sign up</title>
-  <link rel="stylesheet" href="/dist/css/signup/signup.css">
+  <link rel="stylesheet" href="/dist/css/login-signup/login-signup.css">
   <script type="text/javascript" src="/src/js/signup.js" defer></script>
 </head>
 
 <body>
-  <form class="signup-container">
-    <label for="fullname">Full Name</label>
-    <input type="text" id="fullname" placeholder="Enter your full name" required>
+  <form>
+    <h3>Sign Up</h3>
+    <div>
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" placeholder="Enter your full name" required>
+    </div>
 
-    <label for="username">Username</label>
-    <input type="text" id="username" placeholder="Enter your username" required>
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username" required>
+    </div>
 
-    <label for="password">Password</label>
-    <input type="password" id="password" placeholder="Enter your password" required>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+    </div>
 
     <button>Sign up</button>
-
     <p>Already have an account? <a href="/src/html/login.html">Login</a></p>
   </form>
 </body>

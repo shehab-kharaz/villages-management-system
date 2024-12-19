@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a202c;
+  color: #e4e7eb;
+  font-size: 1rem;
+}
+body form {
+  display: flex;
+  flex-direction: column;
+  background-color: #1f2937;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  width: 20%;
+}
+body form h3 {
+  text-align: center;
+}
+body form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+body form div input {
+  padding: 0.5rem 0.3rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+body form div input:focus {
+  outline: none;
+  border: 2px solid #3c82f6;
+}
+body form p {
+  text-align: center;
+}
+body form button,
+body form p a {
+  transition: all 150ms;
+}
+body form button {
+  background-color: #3c82f6;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  color: #e4e7eb;
+}
+body form button:hover {
+  background-color: #0766ff;
+  cursor: pointer;
+}
+body form p a {
+  text-decoration: none;
+  color: #3c82f6;
+}
+body form p a:hover {
+  color: #0060fa;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=login-signup.css.map */
